@@ -29,8 +29,6 @@ namespace WebAPI.Controllers
         {
 
 
-
-
             return Extractor.GetAllNews() ;
            
         }
