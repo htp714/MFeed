@@ -75,20 +75,10 @@ namespace WebAPI.App_Start
 
             using (XmlWriter writer = XmlWriter.Create(stream))
             {
-                if (string.Equals(contenttype, rss))
-                {
-                    Rss20FeedFormatter rssformatter = new Rss20FeedFormatter(feed);
-                    rssformatter.WriteTo(writer);
-                   
-                }
-                else
-                {
-                    //Atom10FeedFormatter atomformatter = new Atom10FeedFormatter(feed);
-                    //atomformatter.WriteTo(writer);
 
-                    Rss20FeedFormatter rssformatter = new Rss20FeedFormatter(feed);
-                    rssformatter.WriteTo(writer);
-                }
+                Rss20FeedFormatter rssformatter = new Rss20FeedFormatter(feed);
+                rssformatter.WriteTo(writer);
+
             }
         }
 
@@ -98,7 +88,7 @@ namespace WebAPI.App_Start
             {
              
                 Title = new TextSyndicationContent(u.Title),
-                BaseUri = new Uri("fit.hcmus.edu.vn"),
+                 BaseUri = new Uri("http://www.fit.hcmus.edu.vn/vn/"),
                 LastUpdatedTime = u.Date,
                 Content = new TextSyndicationContent("Khoa Công nghệ Thông tin (CNTT) của Trường Đại học Khoa học Tự nhiên Tp. HCM  được thành lập  theo quyết định số 3818/GD-ĐT ngày 13/12/1994 của Bộ Trưởng Bộ GD&ĐT, dựa trên Bộ môn tin học của Khoa Toán Trường Đại học Tổng hợp Tp.HCM. Trải qua gần 16 năm hoạt động, Khoa đã phát triển vững chắc và được chính phủ bảo trợ để trở thành một trong những khoa CNTT đầu ngành trong hệ thống giáo dục đại học của Việt Nam.")
             };
