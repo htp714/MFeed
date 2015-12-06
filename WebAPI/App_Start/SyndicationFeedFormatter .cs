@@ -83,8 +83,11 @@ namespace WebAPI.App_Start
                 }
                 else
                 {
-                    Atom10FeedFormatter atomformatter = new Atom10FeedFormatter(feed);
-                    atomformatter.WriteTo(writer);
+                    //Atom10FeedFormatter atomformatter = new Atom10FeedFormatter(feed);
+                    //atomformatter.WriteTo(writer);
+
+                    Rss20FeedFormatter rssformatter = new Rss20FeedFormatter(feed);
+                    rssformatter.WriteTo(writer);
                 }
             }
         }
