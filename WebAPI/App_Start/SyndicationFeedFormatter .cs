@@ -96,11 +96,13 @@ namespace WebAPI.App_Start
         {
             var item = new SyndicationItem()
             {
-                Title = new TextSyndicationContent(u.Title),
-                LastUpdatedTime = u.Date
              
+                Title = new TextSyndicationContent(u.Title),
+                BaseUri = new Uri(""),
+                LastUpdatedTime = u.Date,
+                Content = new TextSyndicationContent("")
             };
-  
+            item.Authors.Add(new SyndicationPerson() { Name = "HTP"});
             return item;
         }
     }
