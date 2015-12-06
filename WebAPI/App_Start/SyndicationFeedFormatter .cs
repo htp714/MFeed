@@ -98,9 +98,9 @@ namespace WebAPI.App_Start
             {
              
                 Title = new TextSyndicationContent(u.Title),
-                BaseUri = new Uri(""),
+                BaseUri = new Uri("fit.hcmus.edu.vn"),
                 LastUpdatedTime = u.Date,
-                Content = new TextSyndicationContent("")
+                Content = new TextSyndicationContent("Khoa Công nghệ Thông tin (CNTT) của Trường Đại học Khoa học Tự nhiên Tp. HCM  được thành lập  theo quyết định số 3818/GD-ĐT ngày 13/12/1994 của Bộ Trưởng Bộ GD&ĐT, dựa trên Bộ môn tin học của Khoa Toán Trường Đại học Tổng hợp Tp.HCM. Trải qua gần 16 năm hoạt động, Khoa đã phát triển vững chắc và được chính phủ bảo trợ để trở thành một trong những khoa CNTT đầu ngành trong hệ thống giáo dục đại học của Việt Nam.")
             };
             item.Authors.Add(new SyndicationPerson() { Name = "HTP"});
             return item;
