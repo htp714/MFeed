@@ -75,15 +75,16 @@ namespace WebAPI.App_Start
 
             using (XmlWriter writer = XmlWriter.Create(stream))
             {
-                if (string.Equals(contenttype, atom))
-                {
-                    Atom10FeedFormatter atomformatter = new Atom10FeedFormatter(feed);
-                    atomformatter.WriteTo(writer);
-                }
-                else
+                if (string.Equals(contenttype, rss))
                 {
                     Rss20FeedFormatter rssformatter = new Rss20FeedFormatter(feed);
                     rssformatter.WriteTo(writer);
+                   
+                }
+                else
+                {
+                    Atom10FeedFormatter atomformatter = new Atom10FeedFormatter(feed);
+                    atomformatter.WriteTo(writer);
                 }
             }
         }
